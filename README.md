@@ -74,7 +74,7 @@ Specific to the 'Spork' PCB, the following table lists what GPIO's we use and wh
 > J1-6           227        Input            !CAMERA_INT             Flag - Indicates a User Request for Camera Interrupt
 
 
-
+d
 
 
 
