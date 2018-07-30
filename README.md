@@ -80,14 +80,32 @@ We need to export all of these GPIO's but first, we initialize the TCA9539 GPIO 
 To export the GPIO's, execute the following commands:
 
 > echo 216 > /sys/class/gpio/export
+>
 > echo 218 > /sys/class/gpio/export
+>
 > echo 222 > /sys/class/gpio/export
+>
 > echo 224 > /sys/class/gpio/export
+>
 > echo 226 > /sys/class/gpio/export
+>
 > echo 228 > /sys/class/gpio/export
+>
 > echo 230 > /sys/class/gpio/export
+>
 > echo 229 > /sys/class/gpio/export
+>
 > echo 227 > /sys/class/gpio/export
+
+
+
+
+
+
+
+
+
+
 
 
 
