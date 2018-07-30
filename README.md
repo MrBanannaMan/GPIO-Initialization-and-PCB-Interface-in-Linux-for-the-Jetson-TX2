@@ -138,9 +138,13 @@ To read the current value of the GPIO, use the command:
 
 If the GPIO is configured as an output, then the following command may be used to write a 1 to that GPIO:
 
-> echo 1 > /sys/class/gpio/gpio186/value
+> echo 1 > /sys/class/gpio/gpio#/value
 
-Note that writing a 1 or a 0 will actually be determined by the configuration of the GPIO or in other words if the GPIO is active high or active low.
+For example, the following command will set GPIO 230 or enable charging via CHGEN with the following command:
+
+> echo 1 > /sys/class/gpio/gpio230/value
+
+
 
 
 
