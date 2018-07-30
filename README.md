@@ -60,18 +60,18 @@ Notice that the GPIO's associated with the TCA9539 are labeled 216-239. These ar
 
 Specific to the 'Spork' PCB, the following table lists what GPIO's we use and what their associated values must be:
 
-Header-Pin#    sysfs#     Input/Output     Schematic Reference     Description of Functionality
-J1-1           230        Output           CHGEN                   Enables Battery Charging when Logic HIGH
-J1-3           228        Input            !ACP                    Flag - Indicates when AC adapter is present when Logic LOW
-J1-5           226        Input            !SMBALERT               Flag - Indicates a problem present with the battery
-J1-7           224        Output           KILL_SIG_DELAY          Disables ALL Power when Logic HIGH after 1s Delay
-J1-9           222        Output           KILL_SIG                Disables ALL Power when Logic HIGH immediately
-J1-13          218        Output           SCREEN_EN               Enables the Screen Power when Logic HIGH
-J1-15          216        Input            SCREEN_STATUS           Flag - Indicates when the Screen is Enabled if Logic HIGH
-
-J1-2           231        Input            LIDAR_STATUS            Flag - Indicates when the Lidar is Enabled if Logic HIGH
-J1-4           229        Output           LIDAR_EN                Enables the Lidar Power when Logic HIGH
-J1-6           227        Input            !CAMERA_INT             Flag - Indicates a User Request for Camera Interrupt
+> Header-Pin#    sysfs#     Input/Output     Schematic Reference     Description of Functionality
+> J1-1           230        Output           CHGEN                   Enables Battery Charging when Logic HIGH
+> J1-3           228        Input            !ACP                    Flag - Indicates when AC adapter is present when Logic LOW
+> J1-5           226        Input            !SMBALERT               Flag - Indicates a problem present with the battery
+> J1-7           224        Output           KILL_SIG_DELAY          Disables ALL Power when Logic HIGH after 1s Delay
+> J1-9           222        Output           KILL_SIG                Disables ALL Power when Logic HIGH immediately
+> J1-13          218        Output           SCREEN_EN               Enables the Screen Power when Logic HIGH
+> J1-15          216        Input            SCREEN_STATUS           Flag - Indicates when the Screen is Enabled if Logic HIGH
+>
+> J1-2           231        Input            LIDAR_STATUS            Flag - Indicates when the Lidar is Enabled if Logic HIGH
+> J1-4           229        Output           LIDAR_EN                Enables the Lidar Power when Logic HIGH
+> J1-6           227        Input            !CAMERA_INT             Flag - Indicates a User Request for Camera Interrupt
 
 
 
