@@ -73,7 +73,21 @@ Specific to the 'Spork' PCB, the following table lists what GPIO's we use and wh
 |J1-4       |    229   |     Output      |   LIDAR_EN             |  Enables the Lidar Power when Logic HIGH|
 |J1-6       |    227   |     Input       |   !CAMERA_INT          |  Flag - Indicates a User Request for Camera Interrupt|
 
+We need to export all of these GPIO's but first, we initialize the TCA9539 GPIO expander by writing to it's I2C Address 0x77 with the following command:
 
+> echo tca9539 0x77 > /sys/bus/i2c/devices/i2c-1/new_device
+
+To export the GPIO's, execute the following commands:
+
+> echo 216 > /sys/class/gpio/export
+> echo 218 > /sys/class/gpio/export
+> echo 222 > /sys/class/gpio/export
+> echo 224 > /sys/class/gpio/export
+> echo 226 > /sys/class/gpio/export
+> echo 228 > /sys/class/gpio/export
+> echo 230 > /sys/class/gpio/export
+> echo 229 > /sys/class/gpio/export
+> echo 227 > /sys/class/gpio/export
 
 
 
