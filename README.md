@@ -96,12 +96,51 @@ To export the GPIO's, execute the following commands:
 > echo 229 > /sys/class/gpio/export
 >
 > echo 227 > /sys/class/gpio/export
+>
 
+Ensure that you have correctly exported the desired GPIO's by running another check on the TX2's I2C Kernel with the command:
 
+> cat /sys/kernel/debug/gpio
 
+This time the table that should appear in the terminal should be exactly the same as the following which now shows the 
 
+> GPIOs 216-231, i2c/0-0077, tca9539, can sleep:
+>  gpio-216 (                    |sysfs               ) in  lo    
+>  gpio-218 (                    |sysfs               ) in  lo    
+>  gpio-222 (                    |sysfs               ) in  lo    
+>  gpio-224 (                    |sysfs               ) in  lo    
+>  gpio-226 (                    |sysfs               ) in  lo    
+>  gpio-227 (                    |sysfs               ) in  lo    
+>  gpio-228 (                    |sysfs               ) in  lo    
+>  gpio-229 (                    |sysfs               ) in  lo    
+>  gpio-230 (                    |sysfs               ) in  lo    
+>
+> GPIOs 232-247, i2c/0-0074, tca9539, can sleep:
+>  gpio-233 (                    |cam_c_rst           ) out lo    
+>  gpio-235 (                    |cam_d_rst           ) out lo    
+>  gpio-237 (                    |cam_e_rst           ) out lo    
+>  gpio-239 (                    |cam_f_rst           ) out lo 
 
+Finally we need to set the appropriate GPIO's to output's as well as change the desired default state for the input GPIO's. First, we will execute the commands to set our GPIO's as outputs:
 
+> echo out > /sys/class/gpio/gpio218/direction
+> echo out > /sys/class/gpio/gpio222/direction
+> echo out > /sys/class/gpio/gpio224/direction
+> echo out > /sys/class/gpio/gpio230/direction
+> echo out > /sys/class/gpio/gpio229/direction
+
+For learning purposes, you should run the i2c kernel list command again to view that the respective GPIO's are now configured as active low outputs. When active low, the pins will read 1 when the state of the pin is at 0.
+
+To read the current value of the GPIO, use the command:
+
+> cat /sys/class/gpio/gpio#/value
+> Where, gpio# is the GPIO sysfs # you wish to access in the form <gpio<sysfs#>>
+
+If the GPIO is configured as an output, then the following command may be used to write a 1 to that GPIO:
+
+> echo 1 > /sys/class/gpio/gpio186/value
+
+Note that writing a 1 or a 0 will actually be determined by the configuration of the GPIO or in other words if the GPIO is active high or active low.
 
 
 
