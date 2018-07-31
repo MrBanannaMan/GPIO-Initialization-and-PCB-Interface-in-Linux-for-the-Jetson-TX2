@@ -140,9 +140,13 @@ This time the table that should appear in the terminal should be exactly the sam
 Finally we need to set the appropriate GPIO's to output's as well as change the desired default state for the input GPIO's. First, we will execute the commands to set our GPIO's as outputs:
 
 > echo out > /sys/class/gpio/gpio218/direction
+
 > echo out > /sys/class/gpio/gpio222/direction
+
 > echo out > /sys/class/gpio/gpio224/direction
+
 > echo out > /sys/class/gpio/gpio230/direction
+
 > echo out > /sys/class/gpio/gpio229/direction
 
 For learning purposes, you should run the i2c kernel list command again to view that the respective GPIO's are now configured as active low outputs. When active low, the pins will read 1 when the state of the pin is at 0.
