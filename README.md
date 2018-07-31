@@ -14,8 +14,11 @@ Before executing the script, enter root by the command:
 
 > sudo bash
 
+Execute the GPIO Initialization script with the following command:
 
+> bash GPIOInit.sh
 
+You should now see that the appropriate GPIO's have been initialized and are configured to the correct state. GPIO Configuration is now complete - if you would like to change the state of the GPIO's however, you must manually assert their states in a terminal or in another program such as cpp.
 
 
 ### Manually Initializing the TCA9539 and Exporting GPIO's
