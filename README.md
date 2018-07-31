@@ -1,11 +1,18 @@
 ## TCA9539 I2C GPIO Expander Setup in Linux for Jetson TX2
 
 ### Introduction
-Instead of sourcing GPIO's directly from the Nvidia Jetson TX2, the ConnectTech Spacely Carrier uses an onboard I2C GPIO expander to create external GPIO's. Because a GPIO Expander is utilized, we will have to access the I2C bus and consequently access the GPIO Expander's specific I2C address.
+Instead of sourcing GPIO's directly from the Nvidia Jetson TX2, the ConnectTech Spacely Carrier uses an onboard I2C GPIO expander to create external GPIO's. Because a GPIO Expander is utilized, we will have to access the I2C bus and consequently access the GPIO Expander's specific I2C address. Another downfall of this is that EVERY time the Spacely is power-cycled, the GPIO's will be reset to their default values and MUST be reconfigured in the initialization script during startup.
 
-By default, the GPIO's are all set to inputs at 3.3V logic high and will be reset to their default states after a power-cycle. Thus, a script must be made to initialize the GPIO ports as inputs and outputs specific to our application (aka the PCB) on power-up. Most of the GPIO's are also set to a "sleep" state and they must be exported in order to be used.
+By default, the GPIO's are all set to inputs at 3.3V logic high and will be reset to their default states after a power-cycle. Thus, a script must be made to initialize the GPIO ports as inputs and outputs specific to our application (aka the PCB) on power-up. Most of the GPIO's are also set to a "sleep" state and they must be exported in order to be used. This readme covers a tutorial on using the bash script I have written to initialize the GPIO's or manually initializing the GPIO's. Unless you are STU or some other software nerd, I reccommend first going through the manual initialization as it will aid in understanding.
 
-### Initializing the TCA9539 and Exporting GPIO's
+### Bash Script TCA9539 GPIO Initialization
+Download the "GPIOInit.sh" bash script from this repository. Move the script to your working bin directory. Make sure that you make the bash script executable by running the following command:
+
+> chmod u+x GPIOInit.sh
+
+
+
+### Manually Initializing the TCA9539 and Exporting GPIO's
 First, one must enter root in an open terminal as the I2C commands will require specific permissions. Sudo will not work as the '>' in commands will break the sudo permissions. To enter root, run the following command:
 
 > sudo bash
