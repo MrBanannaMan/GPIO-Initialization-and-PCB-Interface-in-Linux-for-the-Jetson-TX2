@@ -10,6 +10,12 @@ Download the "GPIOInit.sh" bash script from this repository. Move the script to 
 
 > chmod u+x GPIOInit.sh
 
+Before executing the script, enter root by the command:
+
+> sudo bash
+
+
+
 
 
 ### Manually Initializing the TCA9539 and Exporting GPIO's
