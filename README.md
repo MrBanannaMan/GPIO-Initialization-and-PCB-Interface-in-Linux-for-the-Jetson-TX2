@@ -83,7 +83,7 @@ Specific to the 'Spork' PCB, the following table lists what GPIO's we use and wh
 |J1-5       |    226   |    Input        |     !SMBALERT          |  Flag - Indicates a problem present with the battery|
 |J1-7       |    224   |    Output       |   KILL_SIG_DELAY       |  Disables ALL Power when Logic HIGH after 1s Delay|
 |J1-9       |    222   |    Output       |   KILL_SIG             |  Disables ALL Power when Logic HIGH immediately|
-|J1-13      |    218   |    Output       |   SCREEN_KILL            |  Enables the Screen Power when Logic HIGH|
+|J1-13      |    218   |    Output       |   SCREEN_KILL            |  Disables the Screen Power when Logic HIGH|
 |J1-15      |    216   |    Input        |   SCREEN_STATUS        |  Flag - Indicates when the Screen is Enabled if Logic HIGH|
 |J1-2       |    231   |     Input       |   LIDAR_STATUS         |  Flag - Indicates when the Lidar is Enabled if Logic HIGH|
 |J1-4       |    229   |     Output      |   LIDAR_EN             |  Enables the Lidar Power when Logic HIGH|
