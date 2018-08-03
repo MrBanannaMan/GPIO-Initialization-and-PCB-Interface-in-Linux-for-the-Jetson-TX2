@@ -7,5 +7,5 @@
 
 echo "Shutting Down.. Good-Bye"
 echo 1 > /sys/class/gpio/gpio224/value
-y=$(cat /sys/class/gpio/gpio218/value)
+
 
