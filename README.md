@@ -170,13 +170,17 @@ For example, the following command will set GPIO 230 or enable charging via CHGE
 Download the "LiDarEn.sh", "ScreenEn.sh", and "SystKill.sh" bash scripts from this repository. Move the scripts to your working bin directory. Make sure that you make the bash scripts executable by running the following commands:
 
 > chmod u+x LiDarEn.sh
+
 > chmod u+x ScreenEn.sh
+
 > chmod u+x SystKill.sh
 
 Before executing the scripts, enter root by the command:
 
 > sudo bash
+
 or
+
 > sudo su
 
 Make sure the GPIO's have been released, such that you have already run the GPIO Initialization script with the following command:
@@ -184,15 +188,21 @@ Make sure the GPIO's have been released, such that you have already run the GPIO
 > bash GPIOInit.sh
 
 To enable/disable the LiDar, execute the LiDarEn.sh script:
+
 > bash LiDarEn.sh
+
 When this script is called, the current state of the power supply to the LiDar is inverted. For example, if the LiDar is ON and this script is called, the LiDar will be turned OFF.
 
 To enable/disable the Screen, execute the ScreenEn.sh script:
+
 > bash ScreenEn.sh
+
 When this script is called, the current state of the power supply to the Screen is inverted. For example, if the Screen is ON and this script is called, the Screen will be turned OFF.
 
 To shut the system down (EVERYTHING) followed by a one second delay, execute the SystKill.sh script:
+
 > bash SystKill.sh
+
 When this script is called, everything is shutdown
 
 
